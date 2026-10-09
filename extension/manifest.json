@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "ProofPixel Social Safety",
+  "version": "1.0.0",
+  "description": "Send selected Instagram or Facebook post text and links to ProofPixel for a safety check.",
+  "permissions": ["activeTab", "scripting"],
+  "action": {
+    "default_title": "Check selected post with ProofPixel",
+    "default_popup": "popup.html"
+  }
+}

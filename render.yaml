@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: proofpixel-ai
+    runtime: node
+    plan: starter
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    disk:
+      name: proofpixel-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SQLITE_DB_PATH
+        value: /var/data/proofpixel.db
+      - key: JWT_SECRET
+        generateValue: true
